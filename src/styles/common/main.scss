@@ -1,0 +1,25 @@
+@use "./variables";
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: variables.$primary-font-color;
+  background-color: variables.$primary-background;
+  font-family: variables.$font-stack;
+  font-size: variables.$font-size;
+}
+
+.wrapper {
+  padding: 1em;
+  margin: 0 auto;
+  max-width: 1200px;
+}
