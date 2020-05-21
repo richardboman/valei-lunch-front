@@ -1,5 +1,6 @@
-import React from "react";
-import RatingStar from "./RatingStar";
+import React from 'react';
+import RatingStar from './RatingStar';
+import './rating-style.scss';
 
 const RatingContainer = ({ ratingInput, maxRating, onClick }) => {
   let stars = [];
@@ -13,7 +14,7 @@ const RatingContainer = ({ ratingInput, maxRating, onClick }) => {
     );
   }
 
-  return <div>{stars}</div>;
+  return <div className='rating-wrapper'>{stars}</div>;
 };
 
 export default RatingContainer;

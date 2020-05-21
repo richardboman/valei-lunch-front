@@ -12,7 +12,8 @@
   background-color: white;
 
   p {
-    margin: 0;
+    margin: 1em 0 1em 0;
+    font-weight: bold;
     color: variables.$secondary-font-color;
   }
 
@@ -27,14 +28,25 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 1em 0 1em 0;
+
+    .btn-submit {
+      padding: 1em 2em 1em 2em;
+      border-style: none;
+      border-radius: 10px;
+      background-color: variables.$valei-pink;
+      color: white;
+      font-family: inherit;
+      font-weight: bold;
+    }
   }
 
   .input-wrapper {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
     padding: 0.5em;
-
     border-bottom: variables.$border-secondary-opacity;
 
     input:focus {
@@ -44,16 +56,20 @@
     input,
     textarea {
       border-style: none;
+      outline: none;
+      font-size: variables.$font-size;
+      font-family: variables.$font-stack;
+
       width: 100%;
     }
 
     textarea {
-      font-size: variables.$font-size;
-      padding: 0;
+      resize: none;
       min-height: 100px;
     }
 
     .input-icon {
+      color: variables.$valei-pink;
       margin: 0 1em 0 0;
     }
   }
