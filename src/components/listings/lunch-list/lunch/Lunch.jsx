@@ -3,13 +3,10 @@ import RatingContainer from "../../ratings/RatingContainer";
 import "./lunch-style.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUtensils,
-  faCalendarAlt,
-  faQuoteLeft,
-  faQuoteRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUtensils, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 
+//Displays a lunch review with restaurant name, date, rating
+//and comment
 const Lunch = ({ lunch }) => {
   return (
     <div className="restaurant-wrapper">

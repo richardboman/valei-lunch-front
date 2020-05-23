@@ -4,6 +4,7 @@
 .top-list__wrapper {
   padding: 1em;
   background-color: white;
+  border-bottom: variables.$border-secondary-opacity;
 
   .top-list__title {
     width: 100%;

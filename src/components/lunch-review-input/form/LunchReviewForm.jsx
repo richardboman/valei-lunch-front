@@ -2,40 +2,48 @@ import React, { useState } from "react";
 import TextInput from "../input/TextInput";
 import TextArea from "../input/TextArea";
 import RatingInput from "../rating/RatingInput";
-import Button from "../../button/Button";
+import Button from "../../common/button/Button";
 import {
   faUtensils,
   faComment,
   faTrophy,
-  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./lunch-review-form-style.scss";
-
 const _ = require("lodash");
 
-const LunchReviewForm = ({ onSubmit }) => {
+//Input form for entering a review with a
+//restaurant name, rating and short comment
+const LunchReviewForm = ({ onSubmit, isLoading }) => {
   const [restaurantInput, setRestaurantInput] = useState("");
   const [commentInput, setCommentInput] = useState("");
   const [ratingInput, setRatingInput] = useState(0);
   const [errors, setErrors] = useState({});
 
+  //Validation
   const validateFields = () => {
     const _errors = { ...errors };
-    _errors.restaurantInput = restaurantInput.length <= 3;
+    _errors.restaurantInput = restaurantInput.length < 3;
     _errors.commentInput = commentInput.length > 50;
-    setErrors(_errors);
+    return _errors;
   };
 
+  //Calls for validation of fields and
+  //submits results if no errors in the fields
   const handleSumbit = () => {
-    validateFields();
-    if (!_.isEmpty(errors)) {
+    const _errors = validateFields();
+    const isValid = !_.values(_errors).some((e) => e);
+    if (isValid) {
+      onSubmit({ restaurantInput, commentInput, ratingInput });
+      //Reset state
       setRestaurantInput("");
       setCommentInput("");
       setRatingInput(0);
-      onSubmit({ restaurantInput, commentInput, ratingInput });
+      setErrors({});
     }
+    setErrors(_errors);
   };
+
   return (
     <div className="lunch-review-form__wrapper">
       <div className="lunch-review-form__title">
@@ -78,7 +86,7 @@ const LunchReviewForm = ({ onSubmit }) => {
       </div>
       <div
         className={`input__wrapper input__wrapper--comment ${
-          errors.restaurantInput ? "input__wrapper--error" : ""
+          errors.commentInput ? "input__wrapper--error" : ""
         }`}
       >
         <div className="icon__wrapper sicon__wrapper--comment">
@@ -106,6 +114,7 @@ const LunchReviewForm = ({ onSubmit }) => {
           text="Sätt betyg!"
           className="btn-submit"
           onClick={handleSumbit}
+          isDisabled={isLoading}
         />
       </div>
     </div>

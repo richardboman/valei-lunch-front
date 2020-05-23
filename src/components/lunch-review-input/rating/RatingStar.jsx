@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 
+//Represents one rating star for the rating input
 const RatingStar = ({ checked = false, onClick }) => {
   return (
     <FontAwesomeIcon

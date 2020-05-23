@@ -1,6 +1,7 @@
 import axios from "axios";
 import config from "../config/config.js";
 
+//HTTP-service using axios
 axios.interceptors.response.use(null, (error) => {
   const expectedError =
     error.response &&

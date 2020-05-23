@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 var _ = require("lodash");
 
+//Displays a restaurant with name, date of earliest visit and
+//average rating
 const Restaurant = ({ r }) => {
   return (
     <div className="restaurant-wrapper">

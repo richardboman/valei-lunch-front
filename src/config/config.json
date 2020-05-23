@@ -3,8 +3,7 @@
     "base": "https://localhost:44399/api/",
     "lunches": {
       "post": "lunches/",
-      "get": "lunches/",
-      "getTop": "lunches/top/"
+      "get": "lunches/"
     },
     "restaurants": {
       "post": "restaurants/",

@@ -18,6 +18,7 @@ body {
   font-size: variables.$font-size;
 }
 
+//Standard styling for wrapping buttons
 @mixin btn-wrapper {
   display: flex;
   align-items: center;
@@ -26,6 +27,7 @@ body {
   padding: 1em 0 1em 0;
 }
 
+//Standard styling for buttons
 @mixin btn-standard {
   padding: 1em 2em 1em 2em;
   border-style: none;
