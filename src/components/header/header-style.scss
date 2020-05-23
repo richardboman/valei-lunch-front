@@ -1,0 +1,51 @@
+@use "../../styles/common/variables";
+
+.header-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+
+  background: url("../../images/food-on-table-326278.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  .wrapper {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 1em;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: variables.$font-stack-logo;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0.5em 0 0.5em 0;
+    color: variables.$logo-font-color;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-device-width: variables.$tablet_min-width) {
+  .header-wrapper {
+    min-height: 200px;
+    h1 {
+      font-family: variables.$font-stack-logo;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px #000000;
+      color: variables.$logo-font-color;
+    }
+  }
+}

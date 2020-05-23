@@ -1,0 +1,78 @@
+@use '../../../styles/common/variables';
+@use '../../../styles/common/main';
+
+.lunch-list__wrapper {
+  padding: 1em;
+  background-color: white;
+
+  .lunch-list__title {
+    width: 100%;
+    h5 {
+      @include main.title-small;
+      margin: 0 0 1em 0;
+    }
+  }
+
+  .lunch-list__list {
+    .row {
+      display: flex;
+      display: row;
+      width: 100%;
+    }
+  }
+  .lunch-list__btn-wrapper {
+    @include main.btn-wrapper;
+    .btn-load-more {
+      @include main.btn-standard;
+      min-width: 50%;
+    }
+  }
+}
+
+.sort__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 1em 0;
+
+  .btn-sort {
+    background-color: inherit;
+    text-align: center;
+    font-size: 0.8em;
+    border-style: none;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 0.5em;
+    cursor: pointer;
+  }
+  .active-sort {
+    text-decoration: underline;
+  }
+  .title-xs {
+    @include main.title-xs;
+  }
+  .sort-icon {
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+}
+
+@media only screen and (min-device-width: variables.$tablet_min-width) {
+  .lunch-list__wrapper {
+    width: 70%;
+    max-width: 500px;
+    margin: 1em auto;
+    border: variables.$border-secondary-opacity;
+    border-radius: variables.$border-radius-sm;
+    box-shadow: 0px 0px 5px rgba(85, 85, 85, 0.3);
+
+    .submit-wrapper {
+      .btn-submit {
+        min-width: 50%;
+      }
+    }
+  }
+}

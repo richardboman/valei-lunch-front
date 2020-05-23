@@ -1,0 +1,15 @@
+{
+  "api": {
+    "base": "https://localhost:44399/api/",
+    "lunches": {
+      "post": "lunches/",
+      "get": "lunches/",
+      "getTop": "lunches/top/"
+    },
+    "restaurants": {
+      "post": "restaurants/",
+      "get": "restaurants/",
+      "getTop": "restaurants/top/"
+    }
+  }
+}

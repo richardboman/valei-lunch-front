@@ -18,8 +18,31 @@ body {
   font-size: variables.$font-size;
 }
 
-.wrapper {
-  padding: 1em;
-  margin: 0 auto;
-  max-width: 500px;
+@mixin btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em 0 1em 0;
+}
+
+@mixin btn-standard {
+  padding: 1em 2em 1em 2em;
+  border-style: none;
+  border-radius: variables.$border-radius-sm;
+  background-color: variables.$valei-pink;
+  color: white;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@mixin title-xs {
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+@mixin title-small {
+  font-size: 2em;
+  font-family: variables.$font-stack-list-title;
 }

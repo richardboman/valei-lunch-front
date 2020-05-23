@@ -1,8 +1,0 @@
-{
-  "api": {
-    "base": "https://localhost:44399/api/",
-    "post": "valeilunch/",
-    "get": "lunch/",
-    "getTopList": "lunch/top"
-  }
-}

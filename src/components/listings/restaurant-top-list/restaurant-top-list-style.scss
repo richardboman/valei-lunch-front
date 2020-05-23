@@ -1,0 +1,47 @@
+@use '../../../styles/common/variables';
+@use '../../../styles/common/main';
+
+.top-list__wrapper {
+  padding: 1em;
+  background-color: white;
+
+  .top-list__title {
+    width: 100%;
+    h5 {
+      @include main.title-small;
+      margin: 0 0 1em 0;
+    }
+  }
+
+  .top-list__list {
+    .row {
+      display: flex;
+      display: row;
+      width: 100%;
+    }
+
+    .col:nth-child(even) {
+      flex: 1;
+    }
+    .number {
+      margin-right: 1em;
+    }
+  }
+}
+
+@media only screen and (min-device-width: variables.$tablet_min-width) {
+  .top-list__wrapper {
+    width: 70%;
+    max-width: 500px;
+    margin: 1em auto;
+    border: variables.$border-secondary-opacity;
+    border-radius: variables.$border-radius-sm;
+    box-shadow: 0px 0px 5px rgba(85, 85, 85, 0.3);
+
+    .submit-wrapper {
+      .btn-submit {
+        min-width: 50%;
+      }
+    }
+  }
+}

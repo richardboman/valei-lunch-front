@@ -1,5 +1,5 @@
-import axios from 'axios';
-import config from '../config/config.js';
+import axios from "axios";
+import config from "../config/config.js";
 
 axios.interceptors.response.use(null, (error) => {
   const expectedError =
@@ -8,14 +8,13 @@ axios.interceptors.response.use(null, (error) => {
     error.response.status < 500;
 
   if (!expectedError) {
-    console.log(error);
-    alert('Ett oväntat fel inträffade.');
+    alert("Ett oväntat fel inträffade.");
   }
   return Promise.reject(error);
 });
 
 const get = (endPoint) => axios.get(config.api.base + endPoint);
-const post = (data) => axios.post(config.api.base + config.api.post, data);
+const post = (endPoint, data) => axios.post(config.api.base + endPoint, data);
 
 export default {
   get,
